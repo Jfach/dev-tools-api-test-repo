@@ -1,0 +1,9 @@
+---
+- name: CREATE FILE
+  hosts: localhost
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: create a new file with lineinfile
+      lineinfile: dest=./test.conf regexp='^' line='' state=present create=True
