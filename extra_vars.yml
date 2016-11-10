@@ -1,0 +1,15 @@
+---
+
+  - name: TEST EXTRA VARS
+    hosts: localhost
+    connection: local
+    gather_facts: no
+
+    tasks:
+
+      - debug:
+          var: test01
+      - debug:
+          var: test02
+      - debug:
+          var: test03
