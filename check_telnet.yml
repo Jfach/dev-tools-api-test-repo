@@ -1,6 +1,6 @@
 ---
 - name: CHECK TELNET
-  hosts: route-server.he.net
+  hosts: all
   gather_facts: false
   connection: local
 
