@@ -1,0 +1,26 @@
+---
+- name: CHECK TELNET
+  hosts: all
+  gather_facts: false
+  connection: local
+
+
+  tasks:
+
+    - name: CHECK IS TELNET IS UP
+      wait_for:
+        port: 23
+        state: started
+        timeout: 5000
+        host: "{{ inventory_hostname }}"
+        
+    - name: pause for 6 seconds
+      pause:
+        seconds: 6
+        
+    - name: CHECK IS TELNET IS UP
+      wait_for:
+        port: 23
+        state: started
+        timeout: 5000
+        host: "{{ inventory_hostname }}"
