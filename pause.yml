@@ -14,13 +14,15 @@
         timeout: 5000
         host: "{{ inventory_hostname }}"
         
-    - name: pause for 6 seconds
+    - name: pause for 5 seconds
       pause:
-        seconds: 6
+        seconds: 5
         
-    - name: CHECK IS TELNET IS UP
-      wait_for:
-        port: 23
-        state: started
-        timeout: 5000
-        host: "{{ inventory_hostname }}"
+    - name: collect facts
+      setup:
+        register: facts
+
+    - name: print all facts
+      debug: var=facts
+        
+    
