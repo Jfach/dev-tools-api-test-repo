@@ -9,7 +9,7 @@
         
     - name: pause for 5 seconds
       pause:
-        seconds: 5
+        seconds: 30
         
     - name: CHECK IS TELNET IS UP
       wait_for:
